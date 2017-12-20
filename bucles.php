@@ -46,13 +46,13 @@
 		echo $x[$i] . "<br>";
 	}
 	
+	// recorriendo arrays asociativos multidimendionales con for
 	$c = array($p, 
 				array('nombre' => 'Maria', 'apellidos' => 'Ramirez', 'edad' => 25, 'alta' => TRUE), 
 				array('nombre' => 'Antonio', 'apellidos' => 'Gonzalez', 'edad' => 27, 'alta' => TRUE),
 				array('nombre' => 'Carol', 'apellidos' => 'Ramirez', 'edad' => 31, 'alta' => TRUE),
 				);
-	
-	// recorriendo arrays asociativos multidimendionales con for
+				
 	for($i=0; $i<count($c); $i++){
 		for($z=0; $z<count($i); $z++){
 			echo "Nombre: " . $c[$i]['nombre'] . "<br> Apellidos: " . $c[$i]['apellidos'] . " <br>Edad: " . $c[$i]['edad'] . " <hr>";
