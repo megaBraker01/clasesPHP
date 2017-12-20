@@ -1,13 +1,13 @@
 <?php
 
 // INDETERMINADOS
-	// while, se ejecuta simpre y suando su condicion sea verdadera
+	// while, se ejecuta simpre y cuando su condicion sea verdadera
 	$i=1;
 	while($i<=5){
 		echo $i++ . "<br>";
 		if($i == 4){
 			echo 'hemos llegado a donde queremos' . "<br>";
-			break; // para interrumpir cualquier bucle se utiliza break
+			break; // para interrumpir cualquier tipo de bucle se utiliza break
 		}
 	}
 	
