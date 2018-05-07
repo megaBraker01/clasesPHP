@@ -37,8 +37,8 @@
 	$b = FALSE;
 	$a == $b; // Igual, TRUE si $a es igual a $b después de la manipulación de tipos.
 	$a === $b; // Idéntico, TRUE si $a es igual a $b, y son del mismo tipo.
-	$a != $b; // Diferente, TRUE si $a no es igual a $b después de la manipulación de tipos.
-	$a <> $b; // Diferente, TRUE si $a no es igual a $b después de la manipulación de tipos.
+	$a != $b; // Distinto que o Diferente que, TRUE si $a no es igual a $b después de la manipulación de tipos.
+	$a <> $b; // Distinto que o Diferente que, TRUE si $a no es igual a $b después de la manipulación de tipos.
 	$a !== $b; // No idéntico, TRUE si $a no es igual a $b, o si no son del mismo tipo.
 	$a < $b; // Menor que, TRUE si $a es estrictamente menor que $b.
 	$a > $b; // Mayor que, TRUE si $a es estrictamente mayor que $b.
