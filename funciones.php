@@ -34,6 +34,7 @@
 		return var_dump($num1, $num2, $var3, $var4, $var5);
 	}
 
+
 // FUNDION VARIÁDICA
 // NOTA: Una función variádica es una función de aridad indefinida, es decir, que acepta una cantidad de argumentos variable
 // la aridad es el número de argumentos necesarios para que dicho operador o función se pueda calcular
@@ -46,7 +47,6 @@
 	}
 
 	echo suma(2, 5, 8); // Devuelve 15
-
 
 
 ?>
