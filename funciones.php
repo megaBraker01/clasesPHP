@@ -27,6 +27,24 @@
 	}
 
 
+// FUNCIONES ANONIMAS
+// También conocidas como cierres (closures) Son funciones que no tienen un nombre especificado.
+	$mensaje = 'hola';
+	// Sin "use"
+	$ejemplo = function () {
+	    var_dump($mensaje);
+	};
+	$ejemplo();
+
+// tambien se puede usar USE para heredar parametros
+	$mensaje = 'mundo';
+	// Los cierres también aceptan argumentos normales
+	$ejemplo = function ($arg) use ($mensaje) {
+	    var_dump($arg . ' ' . $mensaje);
+	};
+	$ejemplo("hola");
+
+
 // TIPADO DE PARAMETROS
 // NOTA: en PHP el tipado de parametros se comporta practicamente como el cast
 // ya que float TRUE devuelve 1, int 2.568 devuelve 2, string 692 devuelve "692", bool 3 devuelve TRUE
