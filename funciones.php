@@ -33,7 +33,7 @@
 	// Sin "use"
 	$ejemplo = function () {
 	    var_dump($mensaje);
-	};
+	}; // notese que terminan en punto y coma (;)
 	$ejemplo();
 
 // tambien se puede usar USE para heredar parametros
@@ -41,7 +41,7 @@
 	// Los cierres también aceptan argumentos normales
 	$ejemplo = function ($arg) use ($mensaje) {
 	    var_dump($arg . ' ' . $mensaje);
-	};
+	}; // notese que terminan en punto y coma (;)
 	$ejemplo("hola");
 
 
