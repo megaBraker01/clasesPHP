@@ -61,7 +61,10 @@
 	min($p); // obtiene el valor minimo de una matriz
 	sort($p); // ordena un array por sus valores de menor a mayor
 	rsort($p); // ordena un array por sus valores de mayor a menor
+	array_shift($p); // quita el primer elemento del array
+	array_pop($p); // quita el ultimo elemento del array
 	in_array(parametro1, parametro2); // encontra si el 1er parametro esta dentro del 2do parametro (el 2do tiene que ser un array) eje; in_array(2, array), in_array("hola mundo", array)
 	implode(", ", $p); // Une elementos de un array en un string, separandolos por el primer parametro (glue o pegamento)
+	explode(", "); // Separara un string por el primer parametro (glue) y lo combierte en array indexado
 
 ?>
