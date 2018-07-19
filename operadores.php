@@ -4,6 +4,10 @@
 	$a = TRUE;
 	$b = FALSE;
 	$resultado = $a==$b ? "a es igual a b" : "a es distinto de b"; // condicion ? valor si verdadero : valor si falso
+
+	//FUNSION DE NULL
+	$resultado = $a ?? $b; // devuelve el primer operando de izquierda a derecha que exista y no sea NULL. NULL si no hay valores definidos y no son NULL. Disponible a partir de PHP 7.
+	echo ($resultado);
 	
 	
 	// LOGICOS
@@ -45,7 +49,6 @@
 	$a <= $b; // Menor o igual que, TRUE si $a es menor o igual que $b.
 	$a >= $b; // Mayor o igual que, TRUE si $a es mayor o igual que $b.
 	$a <=> $b; // Nave espacial, devuelve -1 si $a es menor que $b, 0 si son iguales y 1 si $a es mayor a $b.
-	$resultado = $a ?? $b; // Fusión de null, devuelve el primer operando de izquierda a derecha que exista y no sea NULL. NULL si no hay valores definidos y no son NULL. Disponible a partir de PHP 7.
-	echo ($resultado);
+	
 	echo "<br/>";
 ?>
