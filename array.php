@@ -66,5 +66,6 @@
 	in_array(parametro1, parametro2); // encontra si el 1er parametro esta dentro del 2do parametro (el 2do tiene que ser un array) eje; in_array(2, array), in_array("hola mundo", array)
 	implode(", ", $p); // Une elementos de un array en un string, separandolos por el primer parametro (glue o pegamento)
 	explode(", "); // Separara un string por el primer parametro (glue) y lo combierte en array indexado
+	array_change_key_case($p); //cambia todos las claves a minusculas
 
 ?>
