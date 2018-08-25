@@ -3,7 +3,8 @@
 	// TERNARIO
 	$a = TRUE;
 	$b = FALSE;
-	$resultado = $a==$b ? "a es igual a b" : "a es distinto de b"; // condicion ? valor si verdadero : valor si falso
+	$resultado = $a==$b ? "a es igual a b" : "a es distinto de b"; // condicion o valor true ? valor si verdadero : valor si falso
+	$resultado = $b ?: $a; // operador Elvis, forma reducida del Ternario, asigna el primer valor de izquierda a derecha que sea distinto a NULL
 
 	//FUNSION DE NULL
 	$resultado = $a ?? $b; // devuelve el primer operando de izquierda a derecha que exista y no sea NULL. NULL si no hay valores definidos y no son NULL. Disponible a partir de PHP 7.
