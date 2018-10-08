@@ -51,7 +51,12 @@
 	function contatenar(float $num1, int $num2, string $var3, bool $var4, array $var5){
 		return var_dump($num1, $num2, $var3, $var4, $var5);
 	}
-
+// TIPADO DE RETORNO
+// tambien se puede especificar el tipo de retorno que tiene que tener una funcion
+	function saludar(string $nombre, int $edad) : string{
+	   $var = "Hola, me llamo {$nombre} y tengo {$edad} años";
+	   return $var; // esta funcion obligatoriamente tiene que devolver un  string
+	}
 
 // FUNDION VARIÁDICA
 // NOTA: Una función variádica es una función de aridad indefinida, es decir, que acepta una cantidad de argumentos variable
