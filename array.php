@@ -33,7 +33,8 @@
 	for($i=0; $i<count($x); $i++){
 		echo $x[$i] . '<br>';	
 	}
-	
+
+
 // ORDENAR ELEMENTO DEL ARRAY
 	$numeros = array(5, 1, 7, 3, 2, 8);
 	sort($numeros); // SORT odema los numeros de menor a mayor y los string alfabeticamnte
@@ -52,6 +53,20 @@
 			echo '<br>';
 		} else { echo 'la clave es ' . $clave . ' y su valor es ' . $valor .'<br>';}
 	}
+
+
+// DEVOLVER TRUE SI TODOS LOS ELEMENTOS DEL ARRAY CUMPLEN UNA CONDICION
+
+	$array = [4, 2, 6, 8, 11, 12, 20];
+	$ret = 1;
+	function esPar(int $var): bool{
+	    return $var % 2 == 0;
+	}
+
+	foreach($array as $item){
+	    $ret *= esPar($item) ? 1 : 0;
+	}
+	echo $ret;
 
 
 // FUNCIONES FRECUENTES
