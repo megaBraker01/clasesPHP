@@ -83,5 +83,6 @@
 	explode(", "); // Separara un string por el primer parametro (glue) y lo combierte en array indexado
 	array_change_key_case($p); //cambia todos las claves a minusculas
 	array_map("funcionX", $p); //aplica la funcionX pasando como parametro cada elemento del array, devuelve un array con los resultados de la funcionX
+	array_slice($p, 0, 3); // genera otro array con unicamente 3 elementos contando desde el elemento en la posicion 0;
 
 ?>
