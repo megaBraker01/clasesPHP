@@ -130,7 +130,7 @@
 // CONEXION PDO CON CLASES
 	class Conexion2{
 		protected $conexion;
-		public function Conexion(){
+		public function __construct(){
 			try{
 				$this->conexion = new PDO('mysql:host=' .HOSTNAME. '; dbname=' .DATABASE, USER, PASSWORD); // realizamos la conexion
 				$this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  // preparamos las excepciones
@@ -140,6 +140,10 @@
 				die('Fallo en la conexion: ' .$e->GetMessage()); // avisamos del error
 				exit(); // salimos 
 			} 
+		}
+		
+		public function Conectar(){
+			return $this->conexion;
 		}
 	}
 	
