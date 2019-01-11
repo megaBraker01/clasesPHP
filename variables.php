@@ -2,10 +2,20 @@
 
 	// CONSTANTES
 	// para definir una constante se utiliza la funcion define();
-	// la constante funciona como una variable global
+	// la constante son inmutables
 	define("PI", 3.141516); //el primer parametro (simpre entre comillas) es el nombre y el segundo su valor
 	echo PI; //los nombres de las constantes generalmente se escriben en mayusculas
 	echo "<br>";
+
+	// CONSTANTES DENTRO DE CLASE
+	// para definir una constante dentro de una clase se utiliza const NOMBRECONSTANTE = valor;
+	// y para acceder se utiliza self::NOMBRECONSTANTE
+	class Probando {
+		const NOMBRE = "Fulano";
+		public function getNombre(){
+			return self::NOMBRE;
+		}
+	}
 	 
 	// hay varios ambitos de variables, local, estatica, global y super global o variable de sesion
 	
