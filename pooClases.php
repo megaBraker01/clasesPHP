@@ -8,7 +8,7 @@
 		function Coche(){ // contructor de la clase, es para dar un estado inicial a las propiedades de una clase, PHP solo permite un unico contructor, se tiene que llamar exactamente igual que la propia clase
 			$this->rueda = 4;
 			$this->color = "";
-			$this->motor = 1.8;		
+			$this->motor = 1.8;
 		}
 		function arrancar(){ // metodos de una clase
 			return "el coche esta arrancando<br>";
@@ -77,11 +77,11 @@
 
 // PROPIEDADES Y METODOS ESTATICOS
 	class Persona{
-		static $vive = TRUE; // son propias de la clase y NO de los objetos creados, se podria decir que es una constante detro de una clase
+		static $vive = TRUE; // son propias de la clase y NO de los objetos creados, se accede instanciando directamente la clase, eje Persona::$vive
 		private static $ojos = "Negros"; // al igual que cualquier otra propiedad debemos decirle si queremos que sea public, private o protected para que no se puedad modificar ni acceder desde fuera de la clase
 		protected static $pelo;
 		function get_ojos(){
-			return self::$ojos; // para hacer referencia a una propiedad static se utiliza SELF:: en lugar de $THIS->
+			return self::$ojos; // para hacer referencia a una propiedad static se utiliza SELF:: en lugar de $this->
 		}
 		function set_ojos($ojos){
 			self::$ojos = $ojos;
