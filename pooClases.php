@@ -97,6 +97,11 @@
 	$antonio = new Persona;
 	$antonio->set_ojos("azul");
 	echo $antonio->get_ojos();
-	
+
+// OBTENER PROPIEDADES DE LA CLASE
+get_class_vars(get_class($this)); // tambien se puede usar desde fuera de un objeto
+
+// OBTENER PROPIEDADES DE UN OBJETO
+get_object_vars($this);
 
 ?>
