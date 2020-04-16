@@ -47,16 +47,16 @@
 	$resultados = $conexion->query($consulta) or die($conexion->error); // realizamos la consulta con la conexion y si hay un error lo mostramos 
 	
 	$mostrar = "";
-	while($fila = $resultados->fetch_row()){ // recorremos todos los registros por sus indices
+	while($fila = $statement->fetch_row()){ // recorremos todos los registros por sus indices
 		$mostrar .= $fila[0] . " - " . $fila[1] . " - " . $fila[2] . " - " . $fila[3] . "<br>"; // si metemos el resultado en una variable o array entonces podremos cerrar antes la conexion y luego trabajar con dicha varible o array
 	}
 	echo '<br>';
-	while($fila = $resultados->fetch_assoc()){ // recorremos los registros como array asociativos
+	while($fila = $statement->fetch_assoc()){ // recorremos los registros como array asociativos
 		echo $fila['usuId'] . " - " . $fila['usuEmail'] . " - " . $fila['usuPassword'] . " - " . $fila['usuNombre'] . "<br>";
 	}
 	echo '<br>';
 	$conexion->close(); // cerramos la coneccion
-	$resultados->free(); // liberamos la memoria asociada al resultado
+	$statement->free(); // liberamos la memoria asociada al resultado
 	
 	echo $mostrar . "<br>"; // podremos trabajar con los datos aunque la conexion ya este cerrada
 
@@ -77,9 +77,9 @@
 	
 	$consulta = 'SELECT * FROM usuarios';
 	$conexion = new Conexion;
-	$resultados = $conexion->Conexion()->query($consulta);
+	$statement = $conexion->Conexion()->query($consulta);
 	$mostrar = "";
-	while($fila = $resultados->fetch_assoc()){ // recorremos los registros como array asociativos
+	while($fila = $statement->fetch_assoc()){ // recorremos los registros como array asociativos
 		$mostrar .= $fila['usuId'] . " - " . $fila['usuEmail'] . " - " . $fila['usuPassword'] . " - " . $fila['usuNombre'] . "<br>";
 	}
 	$conexion = NULL; // cerramos la coneccion
@@ -98,31 +98,31 @@
 	
 	$consulta = 'SELECT * FROM usuarios WHERE usuFechaAlta < ?'; // especificamos la consuta deseada, el interrogante (marcador) se sustituye por una variable
 	
-	$resultados = $conexion->prepare($consulta);
+	$statement = $conexion->prepare($consulta);
 	
 	$variable = date('Y-m-d');
 	//echo $variable;
-	$resultados->execute(array($variable));
-	echo $resultados->debugDumpParams() . "<br>"; // podemos debugear con el metodo debugDumpParams()
+	$statement->execute(array($variable));
+	echo $statement->debugDumpParams() . "<br>"; // podemos debugear con el metodo debugDumpParams()
 	
 	$mostrar = "";
-	while($fila = $resultados->fetch(PDO::FETCH_NUM)){ // recorremos todos los registros por sus indices
+	while($fila = $statement->fetch(PDO::FETCH_NUM)){ // recorremos todos los registros por sus indices
 		$mostrar .= $fila[0] . " - " . $fila[1] . " - " . $fila[2] . " - " . $fila[3] . "<br>";
 	}
 	echo $mostrar . "<br>";
 	
 	$mostrar = "";
-	while($fila = $resultados->fetch(PDO::FETCH_ASSOC)){ // recorremos los registros como array asociativos
+	while($fila = $statement->fetch(PDO::FETCH_ASSOC)){ // recorremos los registros como array asociativos
 		$mostrar .= $fila['usuId'] . " - " . $fila['usuEmail'] . " - " . $fila['usuPassword'] . " - " . $fila['usuNombre'] . "<br>";
 	}
 	echo $mostrar . "<br>";
 	
 	$mostrar = "";
-	while($fila = $resultados->fetch(PDO::FETCH_OBJ)){ // recorremos los registros como objetos
+	while($fila = $statement->fetch(PDO::FETCH_OBJ)){ // recorremos los registros como objetos
 		$mostrar .= $fila->usuId . " - " . $fila->usuEmail . " - " . $fila->usuPassword . " - " . $fila->usuNombre . "<br>";
 	}	
 	$conexion = NULL; // cerramos la coneccion
-	$resultados->closeCursor(); // liberamos la memoria asociada al resultado
+	$statement->closeCursor(); // liberamos la memoria asociada al resultado
 	
 	echo $mostrar . "<br>"; // podremos trabajar con los datos aunque la conexion ya este cerrada
 
@@ -149,14 +149,16 @@
 	
 	$consulta = 'SELECT * FROM usuarios';
 	$conexion = new Conexion2;
-	$resultados = $conexion->Conexion()->prepare($consulta);
-	$resultados->execute(array());
+	$statement = $conexion->Conexion()->prepare($consulta);
+	$statement->execute(array());
 	$mostrar = "";
-	while($fila = $resultados->fetch(PDO::FETCH_ASSOC)){ // recorremos los registros como array asociativos
+	while($fila = $statement->fetch(PDO::FETCH_ASSOC)){ // recorremos los registros como array asociativos
 		$mostrar .= $fila['usuId'] . " - " . $fila['usuEmail'] . " - " . $fila['usuPassword'] . " - " . $fila['usuNombre'] . "<br>";
 	}
 	$conexion = NULL; // cerramos la coneccion
-	$resultados->closeCursor(); // liberamos la memoria asociada al resultado
+	$statement->closeCursor(); // liberamos la memoria asociada al resultado
+	// $statement->queryString // obtenemos la consulta que se va a ejecutar
+	// $statement->getColumnMeta(0) // obtenemos la informacion del campo especificado, donde 0 es la posicion del campo
 	
 	echo $mostrar . "<br>";
 
