@@ -104,4 +104,15 @@ get_class_vars(get_class($this)); // tambien se puede usar desde fuera de un obj
 // OBTENER PROPIEDADES DE UN OBJETO
 get_object_vars($this);
 
+// CREANDO CLASES STANDARD (objetos que no pertenecen a ninguna clase definida)
+$obj1 = new stdClass; // Instantiate stdClass object
+$obj2 = new class{}; // Instantiate anonymous class
+$obj3 = (object)["nombre" => 'rafael']; // Cast empty array to object
+
+$obj1->nombre = "raul";
+$obj2->saluda = function(){return "hola, cómo estas?";};
+$obj3->email = "correo@hotmail.com";
+$saludar = $obj2->saluda; // saluda es un closure por lo que no se puede ejecutar directamente, por eso lo asignamos a otra variable
+$saludar();
+
 ?>
