@@ -28,7 +28,7 @@
 
 
 // FUNCIONES ANONIMAS
-// También conocidas como cierres (closures) Son funciones que no tienen un nombre especificado.
+// También conocidas como funciones lambda o cierres (closures) Son funciones que no tienen un nombre especificado.
 	$mensaje = 'hola';
 	// Sin "use"
 	$ejemplo = function () {
@@ -70,6 +70,18 @@
 	}
 
 	echo suma(2, 5, 8); // Devuelve 15
+
+// FUNCIONES ANIDADAS
+// son funciones que son definidas dentro de otra funcion
+function paso1(){
+    function paso2(){
+        return "hola munco";
+    }
+    return "adios";
+}
+
+echo paso1();
+echo paso2(); // para poder ejecutar la funcion paso2() es obligatorio ejecutar antes la funcion paso1() que es donde se define
 
 
 ?>
