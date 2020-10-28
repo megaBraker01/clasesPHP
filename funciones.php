@@ -36,7 +36,7 @@
 	}; // notese que terminan en punto y coma (;)
 	$ejemplo();
 
-// tambien se puede usar USE para heredar parametros
+// tambien se puede usar USE para usar parametros fuera del ambito (closure) de la funcion
 	$mensaje = 'mundo';
 	// Los cierres también aceptan argumentos normales
 	$ejemplo = function ($arg) use ($mensaje) {
@@ -44,6 +44,26 @@
 	}; // notese que terminan en punto y coma (;)
 	$ejemplo("hola");
 
+// FUNCIONES VARIABLE
+// son funciones que son asignadas a una variable, luego dicha variable es ejecutada como una funcion normal
+	$fn = function($p1){
+		return $p1 * 2;
+	}
+	
+	echo $fn(4);
+
+// FUNCIONES FLECHA (arrow)
+// son similares a las funciones anonimas (y parecidas a las funciones flecha de javaScript)
+// NOTA: las funciones flecha siempre tienen retorno
+	$y = 1;
+ 
+	$fn1 = fn($x) => $x + $y;
+	$fn1(3);
+	// equivale a:
+	$fn2 = function ($x) use ($y) {
+	    return $x + $y;
+	};
+	$fn2(9);
 
 // TIPADO DE PARAMETROS
 // NOTA: en PHP el tipado de parametros se comporta practicamente como el cast
@@ -54,6 +74,13 @@
 // TIPADO DE RETORNO
 // tambien se puede especificar el tipo de retorno que tiene que tener una funcion
 	function saludar(string $nombre, int $edad) : string{
+	   $var = "Hola, me llamo {$nombre} y tengo {$edad} años";
+	   return $var; // esta funcion obligatoriamente tiene que devolver un  string
+	}
+
+// TIPADO NULL
+// se puede especificar que el tipo de un parametro o del retorno tambien pueda ser null usando el sigo de cierre de interrogacion (?) delante del tipo
+	function saludar(?string $nombre, ?int $edad) : ?string{
 	   $var = "Hola, me llamo {$nombre} y tengo {$edad} años";
 	   return $var; // esta funcion obligatoriamente tiene que devolver un  string
 	}
