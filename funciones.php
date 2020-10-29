@@ -98,6 +98,20 @@
 
 	echo suma(2, 5, 8); // Devuelve 15
 
+// otra forma de crear una función variádica es usando el operador de tres puntos seguidos (...) mas el nombre del parametro, en ese caso 
+// el parametro será un array con todos los parametros pasados en la funcion
+	function suma(...$numeros){
+	    $ret = 0;
+	    foreach($numeros as $num){
+	        $ret += $num;
+	    }
+		
+	    return $ret;
+	}
+
+	echo suma(52, 69, 78, 53);
+
+
 // FUNCIONES ANIDADAS
 // son funciones que son definidas dentro de otra funcion
 function paso1(){
