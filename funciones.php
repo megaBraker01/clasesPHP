@@ -36,7 +36,7 @@
 	}; // notese que terminan en punto y coma (;)
 	$ejemplo();
 
-// tambien se puede usar USE para usar parametros fuera del ambito (closure) de la funcion
+// tambien se puede usar USE para usar parametros fuera del ambito (scope) de la funcion
 	$mensaje = 'mundo';
 	// Los cierres también aceptan argumentos normales
 	$ejemplo = function ($arg) use ($mensaje) {
