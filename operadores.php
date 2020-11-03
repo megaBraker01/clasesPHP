@@ -1,6 +1,6 @@
 <?php
 	
-	// TERNARIO
+	// TERNARIO (llamado así por tener tres argumentos o partes)
 	$a = TRUE;
 	$b = FALSE;
 	$resultado = $a==$b ? "a es igual a b" : "a es distinto de b"; // condicion o valor true ? valor si verdadero : valor si falso
