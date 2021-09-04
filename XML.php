@@ -1,4 +1,5 @@
 <?php
+
 $xmlstr = <<<XML
 <?xml version='1.0' standalone='yes'?>
 <peliculas>
@@ -55,6 +56,8 @@ XML;
 $xml = new SimpleXMLElement($xmlstr);
 //var_dump($xml);
 
+//NOTA: existen otras clases y funciones para manipular un documento xml, DOMDocument y simplexml_load_file
+
 // para acceder a elementos con caracteres reservados (-) se pone entre llaves
 $var = $xml->pelicula[0]->{'grandes-frases'}->frase;
 
@@ -84,9 +87,12 @@ $personaje = $xml->pelicula[0]->personajes->addChild('personaje');
 $personaje->addChild('nombre', 'Sr. Analizador'); // añadimos elementos hijos dentro del elemento que acabamos de crear
 $personaje->addChild('actor', 'John Doe');
 
-// para añadir nuevo atributo addAttribute
+// para añadir nuevo atributo addAttribute, si el traibuto ya existe el valor NO se sobrescribe
 $puntuacion = $xml->pelicula[0]->addChild('puntuacion', '15h-19h');
 $puntuacion->addAttribute('tipo', 'horario');
+
+// para editar el valor de un atributo, se puede hacer como array asociativo 
+$puntuacion['tipo'] = 'hora';
 
 // para imprimir el documento completo
 echo $xml->asXML();
