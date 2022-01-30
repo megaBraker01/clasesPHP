@@ -7,30 +7,30 @@
 
 // ARRAY ASOCIATIVOS
 	$masCosas = array('nombre' => 'Rafael', 'apellidos' => 'Perez Sanchez', 'edad' => 30, 'alta' => TRUE);
-	$masCosas[]=3.14; // si no indicamos el nombre del indice, el valor se guarda en la 1ra posicion libre, empezando por la 0 
-	$masCosas[]='hola mundo'; // este valor se guardara en la posicion 1 ya que la 0 esta ocupada
-	$masCosas['pais']='España';
+	$masCosas[] = 3.14; // si no indicamos el nombre del indice, el valor se guarda en la 1ra posicion libre, empezando por la 0 
+	$masCosas[] = 'hola mundo'; // este valor se guardara en la posicion 1 ya que la 0 esta ocupada
+	$masCosas['pais'] = 'España';
 	//var_dump($masCosas);
 
 
 // COMPROBAR SI ES UN ARRAY
-	if(is_array($masCosas)){
+	if (is_array($masCosas)) {
 		echo "es un array";
 	} else { echo 'no es un array'; }
 
 
 // FOREACH, se utiliza para recorrer todos los elementos de un arrays (aunque tambien se podria usar un bucle for)
 	$x = array("Ramon", 52, "Maria");
-	foreach($x as $valor){
+	foreach ($x as $valor) {
 		echo $valor . "<br>";
 	}
 	
 	$p = array('nombre' => 'Rafael', 'apellidos' => 'Perez Sanchez', 'edad' => 30, 'alta' => TRUE);
-	foreach($p as $clave => $valor){
+	foreach ($p as $clave => $valor) {
 		echo 'la clave es ' . $clave . ' y su valor es ' . $valor . "<br>";
 	}
 	
-	for($i=0; $i<count($x); $i++){
+	for ($i=0; $i<count($x); $i++) {
 		echo $x[$i] . '<br>';	
 	}
 
@@ -45,9 +45,9 @@
 	$frutas = array('manzana', 'peras', 'coco');
 	$leche = array('vaca', 'cabra', 'desnatada');
 	$alimentos = array('tomates', $frutas, $masCosas, 'postre' => 'yogur', $leche, array(50, "hola mundo", true, 3.1415)); //array dentro de otro array
-	foreach($alimentos as $clave => $valor){		
-		if(is_array($valor)){
-			foreach($valor as $propiedad => $vale){
+	foreach ($alimentos as $clave => $valor) {		
+		if (is_array($valor)) {
+			foreach ($valor as $propiedad => $vale) {
 				echo 'la subclave es ' . $propiedad . ' y su subvalor es ' . $vale .'<br>';
 			}
 			echo '<br>';
@@ -63,11 +63,33 @@
 	    return $var % 2 == 0;
 	}
 
-	foreach($array as $item){
+	foreach ($array as $item) {
 	    $ret *= esPar($item) ? 1 : 0;
 	}
 	echo $ret;
 
+// BUSCAR EN ARRAY MULTIDIMENCIONAL
+
+	function buscar($val, $column, $array) {
+	    $columnValues = array_column($array, $column);
+	    $position = array_search($val, $columnValues);
+	    $ret = is_int($position) ? $array[$position] : null;
+
+	    return $ret;
+	}
+
+/*
+$userdb = [
+    ['nombre' => 'alturo', 'apellido' => 'gonzalez', 'dni' => '65488796a'],
+    ['nombre' => 'rafael', 'apellido' => 'perez', 'dni' => '03477542B'],
+    ['nombre' => 'pedro', 'apellido' => 'gutierrez', 'dni' => '98654786c'],
+    ['nombre' => 'maria', 'apellido' => 'meran', 'dni' => '96369856h'],
+    ['nombre' => 'esthel', 'apellido' => 'sanchez', 'dni' => '78565423t'],
+    
+];
+
+var_dump(buscar('98654786c', 'dni', $userdb)); // -> ['nombre' => 'pedro', 'apellido' => 'gutierrez', 'dni' => '98654786c']
+*/
 
 // FUNCIONES FRECUENTES
 	sizeof($p); //está desaconsejado usarlo, en su lugar usar count();
