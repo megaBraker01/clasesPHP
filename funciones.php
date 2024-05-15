@@ -65,13 +65,13 @@
 	};
 	$fn2(9);
 
-// TIPADO DE PARAMETROS
+// TIPADO DE PARAMETROS (Type hinting)
 // NOTA: en PHP el tipado de parametros se comporta practicamente como el cast
 // ya que float TRUE devuelve 1, int 2.568 devuelve 2, string 692 devuelve "692", bool 3 devuelve TRUE
 	function contatenar(float $num1, int $num2, string $var3, bool $var4, array $var5){
 		return var_dump($num1, $num2, $var3, $var4, $var5);
 	}
-// TIPADO DE RETORNO
+// TIPADO DE RETORNO (Type declaration)
 // tambien se puede especificar el tipo de retorno que tiene que tener una funcion
 	function saludar(string $nombre, int $edad) : string{
 	   $var = "Hola, me llamo {$nombre} y tengo {$edad} años";
